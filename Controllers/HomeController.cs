@@ -5,8 +5,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace _1811062672_PhanNguyenTrongDuc_BigSchool.Controllers
+namespace _1811062672_PhanNguyenTrongDuc_BigSchool.Controllers 
 {
+    // Hello world
     public class HomeController : Controller
     {
         private ApplicationDbContext _dbContext;
@@ -25,7 +26,7 @@ namespace _1811062672_PhanNguyenTrongDuc_BigSchool.Controllers
 
             return View();
         }
-
+        
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
