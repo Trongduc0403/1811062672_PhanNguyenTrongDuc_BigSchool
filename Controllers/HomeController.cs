@@ -9,6 +9,7 @@ namespace _1811062672_PhanNguyenTrongDuc_BigSchool.Controllers
 {
     public class HomeController : Controller
     {
+        // không sync
         private ApplicationDbContext _dbContext;
         public HomeController()
         {
