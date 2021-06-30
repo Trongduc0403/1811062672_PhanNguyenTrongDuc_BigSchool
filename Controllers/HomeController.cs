@@ -7,8 +7,6 @@ using System.Web.Mvc;
 
 namespace _1811062672_PhanNguyenTrongDuc_BigSchool.Controllers 
 {
-    // Hello world
-    // Sao lại không ra nhỉ?
     public class HomeController : Controller
     {
         private ApplicationDbContext _dbContext;
