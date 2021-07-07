@@ -13,7 +13,7 @@ namespace _1811062672_PhanNguyenTrongDuc_BigSchool.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202106300210472_CreateTableCourse"; }
+            get { return "202107070227546_CreateTableCourse"; }
         }
         
         string IMigrationMetadata.Source

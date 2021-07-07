@@ -174,21 +174,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106300130342_KhoiTaoModel.cs" />
-    <Compile Include="Migrations\202106300130342_KhoiTaoModel.Designer.cs">
-      <DependentUpon>202106300130342_KhoiTaoModel.cs</DependentUpon>
+    <Compile Include="Migrations\202107070225394_InitialModel.cs" />
+    <Compile Include="Migrations\202107070225394_InitialModel.Designer.cs">
+      <DependentUpon>202107070225394_InitialModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106300210472_CreateTableCourse.cs" />
-    <Compile Include="Migrations\202106300210472_CreateTableCourse.Designer.cs">
-      <DependentUpon>202106300210472_CreateTableCourse.cs</DependentUpon>
+    <Compile Include="Migrations\202107070227546_CreateTableCourse.cs" />
+    <Compile Include="Migrations\202107070227546_CreateTableCourse.Designer.cs">
+      <DependentUpon>202107070227546_CreateTableCourse.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106300212543_PopulateCategoryTable.cs" />
-    <Compile Include="Migrations\202106300212543_PopulateCategoryTable.Designer.cs">
-      <DependentUpon>202106300212543_PopulateCategoryTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106300400377_AddNameColumnToApplicationUser.cs" />
-    <Compile Include="Migrations\202106300400377_AddNameColumnToApplicationUser.Designer.cs">
-      <DependentUpon>202106300400377_AddNameColumnToApplicationUser.cs</DependentUpon>
+    <Compile Include="Migrations\202107070228436_PopulateCategoryTable.cs" />
+    <Compile Include="Migrations\202107070228436_PopulateCategoryTable.Designer.cs">
+      <DependentUpon>202107070228436_PopulateCategoryTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -278,17 +274,14 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106300130342_KhoiTaoModel.resx">
-      <DependentUpon>202106300130342_KhoiTaoModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107070225394_InitialModel.resx">
+      <DependentUpon>202107070225394_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106300210472_CreateTableCourse.resx">
-      <DependentUpon>202106300210472_CreateTableCourse.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107070227546_CreateTableCourse.resx">
+      <DependentUpon>202107070227546_CreateTableCourse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106300212543_PopulateCategoryTable.resx">
-      <DependentUpon>202106300212543_PopulateCategoryTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106300400377_AddNameColumnToApplicationUser.resx">
-      <DependentUpon>202106300400377_AddNameColumnToApplicationUser.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107070228436_PopulateCategoryTable.resx">
+      <DependentUpon>202107070228436_PopulateCategoryTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
