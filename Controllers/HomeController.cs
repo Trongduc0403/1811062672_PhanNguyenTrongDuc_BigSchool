@@ -9,15 +9,20 @@ namespace _1811062672_PhanNguyenTrongDuc_BigSchool.Controllers
 {
     public class HomeController : Controller
     {
-        // không sync
+        // không sync   
         private ApplicationDbContext _dbContext;
         public HomeController()
         {
             _dbContext = new ApplicationDbContext();
         }
+
         public ActionResult Index()
         {
-            return View();
+            var upcomingCourses = _dbContext.Courses
+                //.Include(c => c.Lecturer)
+                //.Include(c => c.Category)
+                .Where(c => c.DateTime > DateTime.Now);
+            return View(upcomingCourses);
         }
 
         public ActionResult About()
