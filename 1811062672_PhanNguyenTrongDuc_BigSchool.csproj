@@ -174,17 +174,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107070225394_InitialModel.cs" />
-    <Compile Include="Migrations\202107070225394_InitialModel.Designer.cs">
-      <DependentUpon>202107070225394_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\202107070249587_KhoiTaoModels.cs" />
+    <Compile Include="Migrations\202107070249587_KhoiTaoModels.Designer.cs">
+      <DependentUpon>202107070249587_KhoiTaoModels.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107070227546_CreateTableCourse.cs" />
-    <Compile Include="Migrations\202107070227546_CreateTableCourse.Designer.cs">
-      <DependentUpon>202107070227546_CreateTableCourse.cs</DependentUpon>
+    <Compile Include="Migrations\202107070254265_InitialModel.cs" />
+    <Compile Include="Migrations\202107070254265_InitialModel.Designer.cs">
+      <DependentUpon>202107070254265_InitialModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107070228436_PopulateCategoryTable.cs" />
-    <Compile Include="Migrations\202107070228436_PopulateCategoryTable.Designer.cs">
-      <DependentUpon>202107070228436_PopulateCategoryTable.cs</DependentUpon>
+    <Compile Include="Migrations\202107070255520_CreateTableCourse.cs" />
+    <Compile Include="Migrations\202107070255520_CreateTableCourse.Designer.cs">
+      <DependentUpon>202107070255520_CreateTableCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107070256299_PopulateCategoryTable.cs" />
+    <Compile Include="Migrations\202107070256299_PopulateCategoryTable.Designer.cs">
+      <DependentUpon>202107070256299_PopulateCategoryTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -274,14 +278,17 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107070225394_InitialModel.resx">
-      <DependentUpon>202107070225394_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107070249587_KhoiTaoModels.resx">
+      <DependentUpon>202107070249587_KhoiTaoModels.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107070227546_CreateTableCourse.resx">
-      <DependentUpon>202107070227546_CreateTableCourse.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107070254265_InitialModel.resx">
+      <DependentUpon>202107070254265_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107070228436_PopulateCategoryTable.resx">
-      <DependentUpon>202107070228436_PopulateCategoryTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107070255520_CreateTableCourse.resx">
+      <DependentUpon>202107070255520_CreateTableCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107070256299_PopulateCategoryTable.resx">
+      <DependentUpon>202107070256299_PopulateCategoryTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
