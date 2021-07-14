@@ -1,12 +1,11 @@
-﻿using System;
+﻿using _1811062672_PhanNguyenTrongDuc_BigSchool.Models;
+using _1811062672_PhanNguyenTrongDuc_BigSchool.ViewModels;
+using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using _1811062672_PhanNguyenTrongDuc_BigSchool.Models;
-using _1811062672_PhanNguyenTrongDuc_BigSchool.ViewModels;
-using Microsoft.AspNet.Identity;
-
 
 namespace _1811062672_PhanNguyenTrongDuc_BigSchool.Controllers
 {
@@ -19,7 +18,7 @@ namespace _1811062672_PhanNguyenTrongDuc_BigSchool.Controllers
         }
         // GET: Courses
         [Authorize]
-        [HttpPost]
+        //[HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(CourseViewModel viewModel)
         {

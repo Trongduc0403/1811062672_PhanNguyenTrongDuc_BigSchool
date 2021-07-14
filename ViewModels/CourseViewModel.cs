@@ -14,8 +14,8 @@ namespace _1811062672_PhanNguyenTrongDuc_BigSchool.ViewModels
         [Required]
         [FutureDate]
         public string Date { get; set; }
-        [ValidTime]
         [Required]
+        [ValidTime]
         public string Time { get; set; }
         [Required]
         public byte Category { get; set; }
