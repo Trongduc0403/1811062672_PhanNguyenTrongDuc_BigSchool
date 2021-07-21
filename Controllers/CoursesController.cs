@@ -17,10 +17,9 @@ namespace _1811062672_PhanNguyenTrongDuc_BigSchool.Controllers
         {
             _dbContext = new ApplicationDbContext();
         }
+
         // GET: Courses
         [Authorize]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Create()
         {
             var viewModel = new CourseViewModel
@@ -28,8 +27,30 @@ namespace _1811062672_PhanNguyenTrongDuc_BigSchool.Controllers
                 Categories = _dbContext.Categories.ToList(),
                 Heading = "Add Course"
             };
-            return View(viewModel);
+            return View("CourseForm",viewModel);
         }
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(CourseViewModel viewModel)
+        {
+            if(!ModelState.IsValid)
+            {
+                viewModel.Categories = _dbContext.Categories.ToList();
+                return View("CourseForm", viewModel);
+            }
+            var course = new Course
+            {
+                LecturerId = User.Identity.GetUserId(),
+                DateTime = viewModel.GetDateTime(),
+                CategoryId = viewModel.Category,
+                Place = viewModel.Place
+            };
+            _dbContext.Courses.Add(course);
+            _dbContext.SaveChanges();
+            return RedirectToAction("Index", "Home");
+        }
+
         [Authorize]
         public ActionResult Attending()
         {
@@ -76,7 +97,7 @@ namespace _1811062672_PhanNguyenTrongDuc_BigSchool.Controllers
                 Heading = "Edit Course",
                 Id = course.ID
             };
-            return View("Create", viewModel);
+            return View("CourseForm", viewModel);
         }
 
         [Authorize]
@@ -87,7 +108,7 @@ namespace _1811062672_PhanNguyenTrongDuc_BigSchool.Controllers
             if(!ModelState.IsValid)
             {
                 viewModel.Categories = _dbContext.Categories.ToList();
-                return View("Create", viewModel);
+                return View("CourseForm", viewModel);
             }
             var userId = User.Identity.GetUserId();
             var course = _dbContext.Courses.Single(c => c.ID == viewModel.Id && c.LecturerId == userId);

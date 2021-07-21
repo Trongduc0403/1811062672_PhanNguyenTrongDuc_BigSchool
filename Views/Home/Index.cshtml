@@ -21,9 +21,9 @@
                         @course.Lecturer.Name
                         @if (Model.ShowAction)
                         {
-                            <button class="btn btn-default btn-sm js-toggle-attendance" data-user-id="@course.LecturerId">Follow</button>
+                            <button class="btn btn-default btn-sm js-toggle-follow" data-user-id="@course.LecturerId">Follow</button>
                         }
-                    </span>
+                    </span> <br />
                     <span class="category">
                         @course.Category.Name
                     </span>
@@ -39,20 +39,36 @@
 {
     <script>
         $(document).ready(function () {
+            CoursesController.init();
             $(".js-toggle-attendace").click(function (e) {
                 var button = $(e.target);
-                $.post("/api/attendances", { courseId: button.attr("data-course-id") })
-                    .done(function () {
-                        button
-                            .removeClass("btn-default")
-                            .addClass("btn-info")
-                            .text("Going");
+                if (button.hasClass("btn-default")) {
+                    $post("/api/attendances", { courseId: button.attr("data-course-id") })
+                        .done(function () {
+                            button
+                                .removeClass("btn-default")
+                                .addClass("btn-info")
+                                .text("Going");
+                        })
+                        .fail(function () {
+                            alert("Something failed!");
+                        });
+                } else {
+                    $ajax({
+                        url: "/api/courses/" + link.attr("data-course-id"),
+                        method: "DELETE"
                     })
-                    .fail(function () {
-                        alert("Something failed!");
-                    });
+                        .done(function () {
+                            link.parents("li").fadeOut(function () {
+                                $(this).remove();
+                            });
+                        })
+                        .fail(function () {
+                            alert("Something failed!");
+                        });
+                }
             });
-            $(".js-toggle-attendace").click(function (e) {
+            $(".js-toggle-follow").click(function (e) {
                 var button = $(e.target);
                 $.post("/api/followings", { followeeId: button.attr("data-user-id") })
                     .done(function () {

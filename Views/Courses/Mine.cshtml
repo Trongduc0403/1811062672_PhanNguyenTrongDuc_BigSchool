@@ -20,7 +20,7 @@
             <div class="details">
                 <span class="lecturer">
                     @course.Lecturer.Name
-                </span>
+                </span> <br />
                 <span class="category">
                     @course.Category.Name
                 </span>
@@ -40,12 +40,23 @@
             $(".js-cancel-course").click(function (e) {
                 e.preventDefault();
                 var link = $(e.target);
-                bootbox.confirm("Are you sure to cancel?",
-                    function () {
-                        $.ajax({
-                            url: "/api/courses/" + link.attr("data-course-id"),
-                            method: "DELETE"
-                        })
+                bootbox.confirm({
+                    title: "Cancel Course?",
+                    message: "Are you sure to cancel?",
+                    buttons: {
+                        cancel: {
+                            label: '<li class="fa fa-times"></li> Cancel'
+                        },
+                        confirm: {
+                            label: '<li class="fa fa-check"></li> Confirm'
+                        }
+                    },
+                    callback: function (result) {
+                        if (result) {
+                            $ajax({
+                                url: "/api/courses/" + link.attr("data-course-id"),
+                                method: "DELETE"
+                            })
                             .done(function () {
                                 link.parents("li").fadeOut(function () {
                                     $(this).remove();
@@ -54,8 +65,10 @@
                             .fail(function () {
                                 alert("Something failed!");
                             });
-                    });
-                });
-            });
+                        }
+                    }
+                 });
+             });
+        });
     </script>
 }
